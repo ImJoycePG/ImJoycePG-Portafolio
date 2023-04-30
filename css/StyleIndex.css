@@ -8,3 +8,54 @@ html {
     box-sizing: border-box;
     content: '';
 }
+
+.homeContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+}
+
+.homeContainer h1 {
+    font-family: 'Gill Sans';
+    font-size: 15px;
+    word-spacing: 2px;
+    color: white;
+}
+
+.homeContainer img {
+    width: 150px;
+    border-radius: 20%;
+    filter: grayscale(80%);
+}
+
+.homeContainer p {
+    text-align: center;
+    margin: 20px;
+    font-family: Sans-serif;
+    font-size: 22px;
+    color: rgb(159, 161, 168);
+}
+
+.homeContainer button {
+    display: inline-block;
+    background-color: #787a793a;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+  
+.homeContainer button:hover {
+    background-color: #787a793a;
+}
