@@ -25,16 +25,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="#Home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Proyectos</a>
+                        <a class="nav-link active" aria-current="page" href="#Projects">Proyectos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Estudio</a>
+                        <a class="nav-link active" aria-current="page" href="#Studies">Estudios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                        <a class="nav-link active" aria-current="page" href="#Contact">Contacto</a>
                     </li>
                     </ul>
                 </div>
@@ -51,7 +51,106 @@
             </div>
         </section>
 
+        <section class="Projects" id="Projects">
+            <h1>Proyectos</h1>
+            <div class="cardList">
+                <div class="card" style="width: 15rem;">
+                    <img src="./images/projects/MysthicArk.webp" class="card-img-top" alt="MysthicArkWeb">
+                    <div class="card-body">
+                      <p class="card-text">Página web oficial de MysthicArk Studios</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="Studies" id="Studies">
+            <h1>Estudios</h1>
+            <div class="cardList">
+                <div class="card" style="width: 15rem;">
+                    <img src="./images/studies/upn.webp" class="card-img-top" alt="MysthicArkWeb">
+                    <div class="card-body">
+                      <p class="card-text">Universidad Privada del Norte</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 15rem;">
+                    <img src="./images/studies/cisco.webp" class="card-img-top" alt="MysthicArkWeb">
+                    <div class="card-body">
+                      <p class="card-text">Cisco Networking Academy</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 15rem;">
+                    <img src="./images/studies/one.webp" class="card-img-top" alt="MysthicArkWeb">
+                    <div class="card-body">
+                      <p class="card-text">Oracle Next Education</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Contact" class="Contact">
+            <h1>¿Quieres ponerte en contacto conmigo?</h1>
+            <form target="_blank" id="contact-form" action="https://formspree.io/f/mlekokeq"
+            method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+              
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+              
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+              
+                <button type="submit">Enviar</button>
+              </form>
+        </section>
+
+        <footer class="footer">
+            <div class="footer_copy">
+                <p class="footer_text">Joyce - Portafolio © 2022 - 2023</p>
+            </div> 
+            <ul class="footer_social">
+                <li><a href="https://www.instagram.com/_imjoycepg_/" class="footer_media" target="_blank"><img src="./images/footer/instagram.webp" alt="InstagramLogo" class="icon"></a></li>
+                <li><a href="https://twitter.com/imjoycepg" class="footer_media" target="_blank"><img src="./images/footer/twitter.webp" alt="TwitterLogo" class="icon"></a></li>
+                <li><a href="https://www.linkedin.com/in/imjoycepg/" class="footer_media" target="_blank"><img src="./images/footer/linkedin.webp" alt="LinkedinLogo" class="icon"></a></li>
+            </ul>
+        </footer>
     </main>
+    <script>
+    var form = document.getElementById("contact-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert("Se ha enviado correctamente el correo.");
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+                alert("No se ha enviado correctamente el correo por unos errores.");
+            } else {
+                alert("¡Ups! Hubo un problema al enviar su formulario");
+            }
+          })
+        }
+      }).catch(error => {
+        alert("¡Ups! Hubo un problema al enviar su formulario");
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </body>
