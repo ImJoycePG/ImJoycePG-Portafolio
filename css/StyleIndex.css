@@ -206,8 +206,61 @@ form button[type="submit"]:hover {
 .icon {
     width: 1.2rem;
     margin-left: .8rem;
-    transition-duration: .5s;
     border-radius: 10%;
 }
 
+@media screen and (min-width: 1000px){
+    .homeContainer h1 {
+        font-size: 20px;
+    }
+    
+    .homeContainer img {
+        width: 200px;
+    }
+    
+    .homeContainer p {
+        margin-top: 4rem;
+        font-size: 30px;
+    }
 
+    .homeContainer button {
+        padding: 20px 30px;
+        margin-top: 40px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    form {
+        width: 50%;
+    }
+
+    .footer_text {
+
+        font-size: 15px;
+        margin-left: 29rem;
+        
+    }
+
+    .footer_social {
+        display: flex;
+        list-style: none;
+        margin-right: 30rem;
+        margin-top: 10px;
+    }
+
+    .icon {
+        width: 1.5rem;
+        margin-left: 1rem;
+        transition-duration: .5s;
+    }
+
+    .icon:hover {
+        transform: translateY(-10px);
+        transition-duration: .5s;
+    }
+    
+}
